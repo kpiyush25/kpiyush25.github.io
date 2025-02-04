@@ -125,7 +125,7 @@ input, select, textarea {
 		@media screen and (max-width: 1680px) {
 
 			body, input, select, textarea {
-				font-size: 13pt;
+				font-size: 10.5pt;
 			}
 
 		}
@@ -2579,6 +2579,8 @@ input, select, textarea {
 
 			.image.left img, .image.right img {
 				width: 100%;
+				height: auto;
+				object-fit: contain;
 			}
 
 		.image.left {
@@ -2594,13 +2596,19 @@ input, select, textarea {
 		}
 
 		.image.fit {
+			overflow: visible;
 			display: block;
 			margin: 0 0 2em 0;
 			width: 100%;
+			object-fit: contain;
 		}
 
 			.image.fit img {
 				width: 100%;
+				overflow: visible;
+				display: block;
+				width: 100%;
+				object-fit: contain;
 			}
 
 		.image.main {
