@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic - Hyperspace by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="./assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="./assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<!-- <a href="index.html" class="title">Hyperspace</a> -->
+				<nav>
+					<ul>
+						<li><a href="./index.html"><font size="4">Home</font></a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Research explorations</h1>
+                            <p>Brief descriptions of the papers I explore along with any questions that I am seeking answers of or any suggestions that I might have. 
+                                <br> Feel free to drop an <a href="mailto:piyushk.kpiyush25@gmail.com">email</a> if you have some discussion points on the below topics!</p>
+                            <hr>
+                            
+                            
+                            <ul>
+
+                                <li>
+                                    <h2><a href="https://arxiv.org/abs/2411.01915"> RoboCrowd: Scaling Robot Data Collection through Crowdsourcing </a> </h2>
+                                    Authors: Suvir Mirchandani, David D. Yuan1, Kaylee Burns, Md Sazzad Islam, Tony Z. Zhao, Chelsea Finn, Dorsa Sadigh
+                                    <h3>Brief Description:</h3>
+                                    <ul>
+                                        <li>RoboCrowd gathers large scale human demonstrations through public participation to train robotic policies using the <a href="https://aloha-2.github.io/">ALOHA bimanual platform</a></li>
+                                        <li>The system encourages participation by offering material rewards like candies, making tasks fun and adding competitive elements like leaderboard.</li>
+                                        <li>When tested at a university cafe for 2 weeks, it gathered more than 800 demonstrations from over 200 participants.</li>
+                                        <li>Combining this gathered data with expert fine-tuning improved the robot's performance by about 20%.</li>
+                                    </ul>
+
+                                    <h3>Suggestions:</h3>
+                                    Following things might further increase user participation and hence data collection:
+                                    <ul>
+                                        <li>Teleoperators at multiple locations: Instead of having a single teleoperator near the ALOHA system, 
+                                            could we install multiple teleoperators with consoles connected to the single ALOHA system across 
+                                            campus similar to teleoperated surgical robotic systems?  </li>
+                                        <li>Alternate user authentication: Users can scan a QR code with their own devices to land on the sign in page, 
+                                            removing the need of having physical card readers at each location </li>
+                                        <li>Tablet-Free interface: The same webpage could host the tutorial, leaderboard, and other interactions, 
+                                            removing the need of having a tablet at each location</li>
+                                        <li>Digital incentives: Online monetary rewards could replace candies/sweets as suggested in the paper itself, 
+                                            making it easier to manage incentives across multiple locations</li>
+                                        <li>Enhanced Gamification: The results can be posted on social media through an official RoboCrowd handle to further 
+                                            incentivize participation. Automated posts can be done every few hours/days</li>
+                                    </ul>
+                                </li>
+
+                                <hr>
+
+                                <li>
+                                    <h2><a href="https://arxiv.org/abs/2501.09747"> FAST: Efficient Action Tokenization for Vision-Language-Action Models </a> </h2>
+                                    Authors: Karl Pertsch, Kyle Stachowicz, Brian Ichter, Danny Driess, Suraj Nair, Quan Vuong, Oier Mees, Chelsea Finn, Sergey Levine
+                                    <h3>Brief Description:</h3>
+                                    <ul>
+                                        <li>FAST: Frequence-space Action Sequence Tokenization</li>
+                                        <li>Existing Vision-Language-Action (VLA) models struggle with continuous action spaces which make learning slow and complex</li>
+                                        <li>Instead of learning continuous movements, FAST proposes breaking actions into discrete tokens, like words in a sentence, so that they can be processed easily</li>
+                                        <li>This approach improves sample efficiency (fewer training steps) and helps robots learn faster</li>
+                                        <li>This approach makes it easier to integrate AI models that understand vision, language and movement together</li>
+                                    </ul>
+
+                                    <h3>Questions/Suggestions:</h3>
+                                    
+                                    <ul>
+                                        <li></li>
+                                    </ul>
+                                </li>
+
+                                <hr>
+
+                                <li>
+                                    <h2><a href="https://arxiv.org/abs/2109.04453"> Tube-Certified Trajectory Tracking for Nonlinear Systems with Robust Control Contraction Metrics </a> </h2>
+                                    Authors: Pan Zhao, Arun Lakshmanan, Kasey Ackerman, Aditya Gahlawat, Marco Pavone, Naira Hovakimyan
+                                    <!-- <span class="image fit"><img src="../images/amex-campus-image.jpeg" alt="" /></span> -->
+                                    <h3>Brief description:</h3>
+                                    <ul>
+                                        <li>The paper presents a method to ensure reliable trajectory tracking for 
+                                            <a href="https://www.wolfram.com/mathematica/new-in-10/nonlinear-control-systems/affine-nonlinear-systems.html">non-linear control-affine Systems</a> </li>
+                                        <li>Based on Robust Control Contraction Metrics (RCCM). Gives tighter tubes compared to existing methods based on standard 
+                                            <a href="https://arxiv.org/abs/1503.03144">control contraction metrics</a></li>
+                                        <li>Incorporated RCCM-based tracking controller, along with computed tubes, into a feedback motion planning framework to plan safe trajectories for robotic systems</li>
+                                        <li>Invariant tubes: A set of trajectories around a nominal path where a system's actual state is guaranteed to remain, despite 
+                                            disturbances and uncertainities. </li>
+                                    </ul>
+                                    <p></p>
+                                    <h3>Questions:</h3>
+                                    <ul>
+                                        <li>Barrier Lyapunov Functions have the ability to naturally prevent constraint violations. Can BLFs be combined with the proposed approach
+                                            to get less conservative and more safety guaranteed trajectory tracking?
+                                        </li>
+                                    </ul>
+                                </li>
+
+
+                                <hr>
+
+
+                            </ul>
+							
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<!-- <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
