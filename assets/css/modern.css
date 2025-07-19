@@ -108,22 +108,122 @@
   font-weight: 500;
 }
 
-[data-theme="dark"] .button.primary {
+/* Aggressive fix for button contrast in dark mode */
+
+/* Remove underlines from buttons in both modes */
+
+/* Fix button contrast and remove underlines */
+
+/* Light mode buttons - ensure no underlines */
+.button.primary {
   background: var(--primary-color);
   color: var(--text-primary);
   border: 1.5px solid var(--primary-color);
+  text-decoration: none;
 }
 
-[data-theme="dark"] .button.secondary {
+.button.secondary {
   background: transparent;
   color: var(--text-primary);
   border: 1.5px solid var(--primary-color);
+  text-decoration: none;
+}
+
+/* Dark mode button fixes - proper contrast and no underlines */
+[data-theme="dark"] .button.primary {
+  background: var(--primary-color);
+  color: #000000; /* Black text for maximum contrast */
+  border: 2px solid var(--primary-color);
+  font-weight: 700;
+  text-shadow: none;
+  text-decoration: none;
+}
+
+[data-theme="dark"] .button.secondary {
+  background: #ffffff; /* White background */
+  color: var(--primary-color); /* Blue text on white background */
+  border: 2px solid var(--primary-color);
+  font-weight: 700;
+  text-shadow: none;
+  text-decoration: none;
 }
 
 [data-theme="dark"] .button:hover {
   background: var(--accent-color);
-  color: var(--text-primary);
+  color: #000000; /* Black text on hover */
   border-color: var(--accent-color);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Apply to all button instances */
+[data-theme="dark"] .project-actions .button,
+[data-theme="dark"] .card .button,
+[data-theme="dark"] .actions .button,
+[data-theme="dark"] .intro-actions .button,
+.project-actions .button,
+.card .button,
+.actions .button,
+.intro-actions .button {
+  text-decoration: none;
+  font-weight: 700;
+  text-shadow: none;
+}
+
+[data-theme="dark"] .project-actions .button.primary,
+[data-theme="dark"] .card .button.primary,
+[data-theme="dark"] .actions .button.primary,
+[data-theme="dark"] .intro-actions .button.primary,
+.project-actions .button.primary,
+.card .button.primary,
+.actions .button.primary,
+.intro-actions .button.primary {
+  text-decoration: none;
+}
+
+[data-theme="dark"] .project-actions .button.secondary,
+[data-theme="dark"] .card .button.secondary,
+[data-theme="dark"] .actions .button.secondary,
+[data-theme="dark"] .intro-actions .button.secondary,
+.project-actions .button.secondary,
+.card .button.secondary,
+.actions .button.secondary,
+.intro-actions .button.secondary {
+  text-decoration: none;
+  background: #ffffff; /* Force white background for secondary buttons */
+  color: var(--primary-color); /* Force blue text */
+}
+
+/* Hover states */
+[data-theme="dark"] .project-actions .button:hover,
+[data-theme="dark"] .card .button:hover,
+[data-theme="dark"] .actions .button:hover,
+[data-theme="dark"] .intro-actions .button:hover,
+.project-actions .button:hover,
+.card .button:hover,
+.actions .button:hover,
+.intro-actions .button:hover {
+  text-decoration: none;
+}
+
+/* Override any global link styles for buttons */
+.button,
+.button:visited,
+.button:hover,
+.button:active {
+  text-decoration: none !important;
+}
+
+/* Specific fix for secondary buttons in dark mode */
+[data-theme="dark"] .button.secondary,
+[data-theme="dark"] .project-actions .button.secondary,
+[data-theme="dark"] .card .button.secondary,
+[data-theme="dark"] .actions .button.secondary {
+  background: #ffffff !important;
+  color: var(--primary-color) !important;
+  border: 2px solid var(--primary-color) !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
 }
 
 /* Fix sidebar text in dark mode */
