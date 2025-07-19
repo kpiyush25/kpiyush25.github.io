@@ -1802,17 +1802,19 @@ html {
   flex-wrap: wrap;
 }
 
+/* Further reduce button sizes for intro-actions */
+
 .intro-actions .button {
-  font-size: 0.8rem; /* Reduced from default size */
-  padding: 0.5em 1em; /* Reduced padding for smaller buttons */
+  font-size: 0.7rem; /* Reduced from 0.8rem to 0.7rem */
+  padding: 0.35em 0.8em; /* Reduced padding */
   border-radius: var(--border-radius-md);
   text-decoration: none;
   font-weight: 500;
   transition: all var(--transition-normal);
   display: inline-flex;
   align-items: center;
-  gap: 0.3em; /* Reduced gap between icon and text */
-  min-height: 36px; /* Reduced from default height */
+  gap: 0.25em; /* Reduced gap between icon and text */
+  min-height: 28px; /* Reduced from 36px to 28px */
 }
 
 .intro-actions .button.primary {
@@ -1827,24 +1829,24 @@ html {
 }
 
 .intro-actions .button:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-1px); /* Reduced hover effect */
+  box-shadow: var(--shadow-sm); /* Reduced shadow */
 }
 
-/* Responsive adjustments for intro-actions */
+/* Responsive adjustments for intro-actions buttons */
 @media (max-width: 1024px) {
   .intro-actions .button {
-    font-size: 0.75rem; /* Slightly smaller on medium screens */
-    padding: 0.45em 0.9em;
-    min-height: 32px;
+    font-size: 0.65rem; /* Reduced from 0.75rem to 0.65rem */
+    padding: 0.3em 0.7em;
+    min-height: 26px; /* Reduced from 32px to 26px */
   }
 }
 
 @media (max-width: 768px) {
   .intro-actions .button {
-    font-size: 0.7rem; /* Even smaller on mobile */
-    padding: 0.4em 0.8em;
-    min-height: 30px;
+    font-size: 0.6rem; /* Reduced from 0.7rem to 0.6rem */
+    padding: 0.25em 0.6em;
+    min-height: 24px; /* Reduced from 30px to 24px */
   }
   
   .intro-actions {
@@ -1854,8 +1856,143 @@ html {
 
 @media (max-width: 480px) {
   .intro-actions .button {
-    font-size: 0.65rem; /* Smallest on very small screens */
-    padding: 0.35em 0.7em;
-    min-height: 28px;
+    font-size: 0.55rem; /* Reduced from 0.65rem to 0.55rem */
+    padding: 0.2em 0.5em;
+    min-height: 22px; /* Reduced from 28px to 22px */
+  }
+} 
+
+/* Reduce font size for section headers and paper titles */
+
+/* Section headers (like "Publications") */
+.wrapper h2 {
+  font-size: 1.8rem; /* Reduced from default larger size */
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.2;
+}
+
+/* Paper titles and project titles */
+.project-details h3,
+.card h3 {
+  font-size: 1.3rem; /* Reduced from default size */
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.3;
+}
+
+/* Responsive adjustments for headers */
+@media (max-width: 1024px) {
+  .wrapper h2 {
+    font-size: 1.6rem; /* Reduced from 1.8rem */
+  }
+  
+  .project-details h3,
+  .card h3 {
+    font-size: 1.2rem; /* Reduced from 1.3rem */
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper h2 {
+    font-size: 1.4rem; /* Reduced from 1.6rem */
+  }
+  
+  .project-details h3,
+  .card h3 {
+    font-size: 1.1rem; /* Reduced from 1.2rem */
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper h2 {
+    font-size: 1.2rem; /* Reduced from 1.4rem */
+  }
+  
+  .project-details h3,
+  .card h3 {
+    font-size: 1rem; /* Reduced from 1.1rem */
+  }
+} 
+
+/* Reduce button sizes to match text proportions */
+
+/* Reduce button sizes for all action buttons */
+
+.project-actions .button,
+.card .button,
+.actions .button {
+  font-size: 0.7rem; /* Reduced from 0.8rem to 0.7rem */
+  padding: 0.35em 0.8em; /* Reduced padding */
+  border-radius: var(--border-radius-md);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em; /* Reduced gap between icon and text */
+  min-height: 28px; /* Reduced from 32px to 28px */
+  margin-right: 0.4em; /* Reduced margin between buttons */
+  margin-bottom: 0.4em; /* Reduced margin for button wrapping */
+}
+
+.project-actions .button.primary,
+.card .button.primary,
+.actions .button.primary {
+  background: var(--primary-color);
+  color: var(--text-primary);
+}
+
+.project-actions .button.secondary,
+.card .button.secondary,
+.actions .button.secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1.5px solid var(--primary-color);
+}
+
+.project-actions .button:hover,
+.card .button:hover,
+.actions .button:hover {
+  transform: translateY(-1px); /* Reduced hover effect */
+  box-shadow: var(--shadow-sm); /* Reduced shadow */
+}
+
+/* Responsive adjustments for all buttons */
+@media (max-width: 1024px) {
+  .project-actions .button,
+  .card .button,
+  .actions .button {
+    font-size: 0.65rem; /* Reduced from 0.75rem to 0.65rem */
+    padding: 0.3em 0.7em;
+    min-height: 26px; /* Reduced from 30px to 26px */
+  }
+}
+
+@media (max-width: 768px) {
+  .project-actions .button,
+  .card .button,
+  .actions .button {
+    font-size: 0.6rem; /* Reduced from 0.7rem to 0.6rem */
+    padding: 0.25em 0.6em;
+    min-height: 24px; /* Reduced from 28px to 24px */
+  }
+  
+  .project-actions,
+  .card .button-group,
+  .actions {
+    gap: 0.3em; /* Reduced gap between buttons on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .project-actions .button,
+  .card .button,
+  .actions .button {
+    font-size: 0.55rem; /* Reduced from 0.65rem to 0.55rem */
+    padding: 0.2em 0.5em;
+    min-height: 22px; /* Reduced from 26px to 22px */
   }
 } 
