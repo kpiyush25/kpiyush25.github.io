@@ -69,33 +69,22 @@
 
 /* Update the header and body positioning */
 
-/* Remove white strip completely */
+/* Remove white strip and create smooth transition */
 
-body {
-  font-family: var(--font-family);
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-base);
-  color: var(--text-primary);
-  background-color: var(--background-color);
-  transition: background-color var(--transition-normal), color var(--transition-normal);
-  margin: 0;
-  padding: 0; /* Removed padding-top completely */
-}
-
-/* Modern Header - Fixed positioning */
 #header {
   background: var(--primary-color);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border-color);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
-  transition: all var(--transition-normal);
-  height: 80px; /* Fixed height */
+  height: 80px;
+  z-index: 10001;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 2em;
+  box-shadow: none; /* Remove any shadow that might create the white line */
+  border-bottom: none; /* Remove any border that might create the white line */
 }
 
 #header .header-content {
@@ -153,7 +142,7 @@ body {
 
 /* Modern Sidebar */
 #sidebar {
-  padding: 2.5em 1.5em 0.5em 1.5em;
+  padding: 0.1em 1.5em 0.5em 1.5em;
   background: var(--primary-color);
   text-decoration-color: black;
   text-decoration: black;
@@ -164,9 +153,11 @@ body {
   overflow-y: auto;
   position: fixed;
   text-align: left;
-  top: 80px; /* Back to original positioning */
+  top: 80px; /* Align perfectly with header */
   width: 20em;
   z-index: 10000;
+  border-top: none; /* Remove any top border */
+  box-shadow: none; /* Remove any shadow */
 }
 
 #sidebar .inner {
@@ -675,7 +666,7 @@ html {
   align-items: flex-start; /* Changed from center to flex-start */
   background: linear-gradient(135deg, var(--surface-color) 0%, var(--background-color) 100%);
   position: relative;
-  padding-top: -15px;
+  padding-top: 0px; /* Reduced from 5px to 0px */
 }
 
 #intro::before {
@@ -701,7 +692,7 @@ html {
   padding: var(--spacing-xxl) var(--spacing-xl);
   position: relative;
   z-index: 1;
-  padding-top: 2em; /* Add some top padding to the content */
+  padding-top: 0.2em; /* Reduced from 0.5em to 0.2em */
 }
 
 /* Main Intro Text */
@@ -711,16 +702,11 @@ html {
 
 /* Name/Title */
 .intro-content h1 {
-  font-size: 3.5rem;
-  font-weight: 800;
-  margin-bottom: var(--spacing-lg);
-  line-height: 1.1;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 50%, var(--primary-color) 100%);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradientShift 3s ease-in-out infinite;
+  font-size: 2.2rem; /* Reduced from default larger size */
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.2;
 }
 
 @keyframes gradientShift {
@@ -730,24 +716,25 @@ html {
 
 /* Greeting */
 .intro-greeting {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: var(--accent-color);
   font-weight: 600;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
   padding: var(--spacing-md) var(--spacing-lg);
   background: rgba(80, 199, 247, 0.1);
   border-radius: var(--border-radius-lg);
   border-left: 4px solid var(--accent-color);
   display: inline-block;
+  margin-top: 0; /* Remove any top margin */
 }
 
 /* Main Description */
 .intro-content p {
-  font-size: 1.1rem;
-  line-height: 1.8;
+  font-size: 1rem; /* Reduced from default size */
+  line-height: 1.6;
   color: var(--text-secondary);
   margin-bottom: var(--spacing-lg);
-  text-align: justify;
+  max-width: 600px;
 }
 
 .intro-content p strong {
@@ -778,7 +765,7 @@ html {
 }
 
 .interests-section h3 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--text-primary);
   margin-bottom: var(--spacing-md);
   display: flex;
@@ -806,6 +793,9 @@ html {
   border: 1px solid var(--border-color);
   position: relative;
   overflow: hidden;
+  max-width: 80%; /* Reduced max-width by 25% */
+  font-size: 0.8rem; /* Reduced font size by 25% */
+  padding: 1.2rem; /* Reduced padding by 25% */
 }
 
 .quote-section::before {
@@ -842,25 +832,25 @@ html {
 .intro-image {
   text-align: center;
   position: relative;
-  margin-top: -650px; /* Increased significantly to align with the name */
+  margin-top: -120px; /* Increased negative margin to move image to the top */
 }
 
 /* For mobile devices, adjust the margin proportionally */
 @media (max-width: 1024px) {
   .intro-image {
-    margin-top: -120px; /* Adjusted for smaller screens */
+    margin-top: -90px; /* Increased from -60px to -90px */
   }
 }
 
 @media (max-width: 768px) {
   .intro-image {
-    margin-top: -100px; /* Adjusted for mobile */
+    margin-top: -75px; /* Increased from -50px to -75px */
   }
 }
 
 @media (max-width: 480px) {
   .intro-image {
-    margin-top: -80px; /* Adjusted for very small screens */
+    margin-top: -60px; /* Increased from -40px to -60px */
   }
 }
 
@@ -897,25 +887,37 @@ html {
   z-index: 1;
 }
 
-/* Adjust sizes for responsive design */
+/* Responsive adjustments for intro image positioning */
 @media (max-width: 1024px) {
+  .intro-image {
+    margin-top: -90px; /* Increased from -60px to -90px */
+  }
+  
   .intro-image img {
-    width: 250px; /* Increased from 200px */
-    height: 250px; /* Increased from 200px */
+    width: 250px;
+    height: 250px;
   }
 }
 
 @media (max-width: 768px) {
+  .intro-image {
+    margin-top: -75px; /* Increased from -50px to -75px */
+  }
+  
   .intro-image img {
-    width: 220px; /* Increased from 180px */
-    height: 220px; /* Increased from 180px */
+    width: 220px;
+    height: 220px;
   }
 }
 
 @media (max-width: 480px) {
+  .intro-image {
+    margin-top: -60px; /* Increased from -40px to -60px */
+  }
+  
   .intro-image img {
-    width: 180px; /* Increased from 150px */
-    height: 180px; /* Increased from 150px */
+    width: 180px;
+    height: 180px;
   }
 }
 
@@ -971,7 +973,7 @@ html {
   }
   
   .intro-content h1 {
-    font-size: 3rem;
+    font-size: 8rem;
   }
   
   .intro-image img {
@@ -987,7 +989,7 @@ html {
   }
   
   .intro-content h1 {
-    font-size: 2.5rem;
+    font-size: 8rem;
   }
   
   .intro-greeting {
@@ -1277,6 +1279,28 @@ html {
   transition: all var(--transition-normal);
   position: relative;
   overflow: hidden;
+  width: 100%; /* Ensure full width */
+  max-width: 1000px; /* Increased from default to accommodate longer text */
+}
+
+/* Responsive adjustments for card width */
+@media (max-width: 1024px) {
+  .card {
+    max-width: 900px; /* Slightly smaller on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    max-width: 750px; /* Smaller on mobile but still wide enough */
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    max-width: 100%; /* Full width on very small screens */
+    padding: var(--spacing-lg); /* Slightly reduced padding */
+  }
 }
 
 .card::before {
@@ -1537,11 +1561,11 @@ html {
   }
 } 
 
-/* Adjust sidebar font size to fit all sections without scrolling */
+/* Reduce sidebar font size to fit all sections without scrolling */
 
 #sidebar nav ul li a {
   display: block;
-  padding: var(--spacing-md) var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-sm); /* Reduced padding */
   color: var(--text-primary);
   text-decoration: none;
   border-radius: var(--border-radius-md);
@@ -1549,25 +1573,289 @@ html {
   font-weight: 500;
   position: relative;
   overflow: hidden;
-  font-size: 0.95rem; /* Reduced from 1.1rem to 0.95rem */
-  line-height: 1.3; /* Slightly reduced line height */
+  font-size: 0.8rem; /* Reduced from 0.95rem to 0.8rem */
+  line-height: 1.2; /* Reduced line height */
 }
 
 /* Responsive adjustments for sidebar font size */
 @media (max-width: 1280px) {
   #sidebar nav ul li a {
-    font-size: 0.9rem; /* Slightly smaller on medium screens */
+    font-size: 0.75rem; /* Reduced from 0.9rem to 0.75rem */
+    padding: 0.6em 0.8em; /* Further reduced padding */
   }
 }
 
 @media (max-width: 1024px) {
   #sidebar nav ul li a {
-    font-size: 0.85rem; /* Even smaller on smaller screens */
+    font-size: 0.7rem; /* Reduced from 0.85rem to 0.7rem */
+    padding: 0.5em 0.7em; /* Further reduced padding */
   }
 }
 
 @media (max-width: 768px) {
   #sidebar nav ul li a {
-    font-size: 0.8rem; /* Smallest on mobile */
+    font-size: 0.65rem; /* Reduced from 0.8rem to 0.65rem */
+    padding: 0.4em 0.6em; /* Further reduced padding */
+  }
+} 
+
+/* Responsive adjustments for intro text */
+/* Further reduce font size in intro section */
+
+/* Reduce font size by 50% in intro section */
+
+.intro-content h1 {
+  font-size: 1.1rem; /* Reduced by 50% from 2.2rem (2.2 * 0.5 = 1.1) */
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.2;
+}
+
+/* Reduce font size by 25% for intro-text div */
+
+.intro-text {
+  font-size: 0.8625rem; /* Increased by 15% from 0.75rem (0.75 * 1.15 = 0.8625) */
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+  max-width: 600px;
+}
+
+/* Responsive adjustments for intro-text */
+@media (max-width: 1024px) {
+  .intro-text {
+    font-size: 0.819375rem; /* Increased by 15% from 0.7125rem (0.7125 * 1.15 = 0.819375) */
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-text {
+    font-size: 0.77625rem; /* Increased by 15% from 0.675rem (0.675 * 1.15 = 0.77625) */
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-text {
+    font-size: 0.733125rem; /* Increased by 15% from 0.6375rem (0.6375 * 1.15 = 0.733125) */
+  }
+} 
+
+/* Increase font size by 60% for h1 inside intro-text */
+
+.intro-text h1 {
+  font-size: 1.76rem; /* Increased by 60% from 1.1rem (1.1 * 1.6 = 1.76) */
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.2;
+}
+
+/* Responsive adjustments for intro-text h1 */
+@media (max-width: 1024px) {
+  .intro-text h1 {
+    font-size: 1.6rem; /* Increased by 60% from 1rem (1 * 1.6 = 1.6) */
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-text h1 {
+    font-size: 1.44rem; /* Increased by 60% from 0.9rem (0.9 * 1.6 = 1.44) */
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-text h1 {
+    font-size: 1.28rem; /* Increased by 60% from 0.8rem (0.8 * 1.6 = 1.28) */
+  }
+} 
+/* Reduce size by 20% for quote-section */
+
+.quote-section {
+  font-size: 0.8rem; /* Reduced by 20% from 1rem (1 * 0.8 = 0.8) */
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+  max-width: 480px; /* Reduced by 20% from 600px (600 * 0.8 = 480) */
+  padding: 0.8em; /* Reduced by 20% from 1em (1 * 0.8 = 0.8) */
+}
+
+/* Responsive adjustments for quote-section */
+@media (max-width: 1024px) {
+  .quote-section {
+    font-size: 0.76rem; /* Reduced by 20% from 0.95rem (0.95 * 0.8 = 0.76) */
+    max-width: 384px; /* Reduced by 20% from 480px (480 * 0.8 = 384) */
+  }
+}
+
+@media (max-width: 768px) {
+  .quote-section {
+    font-size: 0.72rem; /* Reduced by 20% from 0.9rem (0.9 * 0.8 = 0.72) */
+    max-width: 320px; /* Reduced by 20% from 400px (400 * 0.8 = 320) */
+  }
+}
+
+@media (max-width: 480px) {
+  .quote-section {
+    font-size: 0.68rem; /* Reduced by 20% from 0.85rem (0.85 * 0.8 = 0.68) */
+    max-width: 256px; /* Reduced by 20% from 320px (320 * 0.8 = 256) */
+  }
+} 
+
+/* Reduce size by additional 25% for quote-section */
+
+.quote-section {
+  font-size: 0.6rem; /* Reduced by 25% from 0.8rem (0.8 * 0.75 = 0.6) */
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+  max-width: 360px; /* Reduced by 25% from 480px (480 * 0.75 = 360) */
+  padding: 0.6em; /* Reduced by 25% from 0.8em (0.8 * 0.75 = 0.6) */
+}
+
+/* Responsive adjustments for quote-section */
+@media (max-width: 1024px) {
+  .quote-section {
+    font-size: 0.57rem; /* Reduced by 25% from 0.76rem (0.76 * 0.75 = 0.57) */
+    max-width: 288px; /* Reduced by 25% from 384px (384 * 0.75 = 288) */
+  }
+}
+
+@media (max-width: 768px) {
+  .quote-section {
+    font-size: 0.54rem; /* Reduced by 25% from 0.72rem (0.72 * 0.75 = 0.54) */
+    max-width: 240px; /* Reduced by 25% from 320px (320 * 0.75 = 240) */
+  }
+}
+
+@media (max-width: 480px) {
+  .quote-section {
+    font-size: 0.51rem; /* Reduced by 25% from 0.68rem (0.68 * 0.75 = 0.51) */
+    max-width: 192px; /* Reduced by 25% from 256px (256 * 0.75 = 192) */
+  }
+} 
+
+/* Reduce font size and increase card width for quote section */
+
+.quote-section {
+  font-size: 0.45rem; /* Reduced from 0.6rem to 0.45rem */
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+  max-width: 500px; /* Increased from 360px to 500px */
+  padding: 0.6em;
+}
+
+/* Increase card width to accommodate quote */
+.card {
+  background: var(--surface-color);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  margin-bottom: var(--spacing-lg);
+  width: 100%;
+  max-width: 1200px; /* Increased from 1000px to 1200px */
+}
+
+/* Responsive adjustments for quote-section */
+@media (max-width: 1024px) {
+  .quote-section {
+    font-size: 0.4275rem; /* Reduced from 0.57rem to 0.4275rem */
+    max-width: 400px; /* Increased from 288px to 400px */
+  }
+  
+  .card {
+    max-width: 1000px; /* Increased from 900px to 1000px */
+  }
+}
+
+@media (max-width: 768px) {
+  .quote-section {
+    font-size: 0.405rem; /* Reduced from 0.54rem to 0.405rem */
+    max-width: 350px; /* Increased from 240px to 350px */
+  }
+  
+  .card {
+    max-width: 800px; /* Increased from 750px to 800px */
+  }
+}
+
+@media (max-width: 480px) {
+  .quote-section {
+    font-size: 0.3825rem; /* Reduced from 0.51rem to 0.3825rem */
+    max-width: 300px; /* Increased from 192px to 300px */
+  }
+  
+  .card {
+    max-width: 100%; /* Full width on very small screens */
+    padding: var(--spacing-lg);
+  }
+} 
+
+/* Reduce font size and button dimensions for intro-actions */
+
+.intro-actions {
+  margin-top: var(--spacing-lg);
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.intro-actions .button {
+  font-size: 0.8rem; /* Reduced from default size */
+  padding: 0.5em 1em; /* Reduced padding for smaller buttons */
+  border-radius: var(--border-radius-md);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em; /* Reduced gap between icon and text */
+  min-height: 36px; /* Reduced from default height */
+}
+
+.intro-actions .button.primary {
+  background: var(--primary-color);
+  color: var(--text-primary);
+}
+
+.intro-actions .button.secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--primary-color);
+}
+
+.intro-actions .button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Responsive adjustments for intro-actions */
+@media (max-width: 1024px) {
+  .intro-actions .button {
+    font-size: 0.75rem; /* Slightly smaller on medium screens */
+    padding: 0.45em 0.9em;
+    min-height: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-actions .button {
+    font-size: 0.7rem; /* Even smaller on mobile */
+    padding: 0.4em 0.8em;
+    min-height: 30px;
+  }
+  
+  .intro-actions {
+    gap: var(--spacing-sm); /* Reduced gap on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-actions .button {
+    font-size: 0.65rem; /* Smallest on very small screens */
+    padding: 0.35em 0.7em;
+    min-height: 28px;
   }
 } 
