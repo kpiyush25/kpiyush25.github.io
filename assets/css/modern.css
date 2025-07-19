@@ -62,6 +62,229 @@
   --error-color: #ef5350;
 }
 
+/* Dark mode fixes for text visibility */
+
+/* Dark mode color variables */
+[data-theme="dark"] {
+  --primary-color: #50c7f7;
+  --secondary-color: #2c3e50;
+  --background-color: #1a1a1a;
+  --surface-color: #2d2d2d;
+  --text-primary: #ffffff;
+  --text-secondary: #e0e0e0;
+  --border-color: #404040;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --accent-color: #3498db;
+  --success-color: #27ae60;
+  --warning-color: #f39c12;
+  --error-color: #e74c3c;
+}
+
+/* Ensure proper text contrast in dark mode */
+[data-theme="dark"] .card {
+  background: var(--surface-color);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .project-details h3,
+[data-theme="dark"] .card h3 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .project-details p,
+[data-theme="dark"] .card p {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .project-meta .tag {
+  background: var(--primary-color);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* Fix button text visibility in dark mode */
+[data-theme="dark"] .button {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+[data-theme="dark"] .button.primary {
+  background: var(--primary-color);
+  color: var(--text-primary);
+  border: 1.5px solid var(--primary-color);
+}
+
+[data-theme="dark"] .button.secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1.5px solid var(--primary-color);
+}
+
+[data-theme="dark"] .button:hover {
+  background: var(--accent-color);
+  color: var(--text-primary);
+  border-color: var(--accent-color);
+}
+
+/* Fix sidebar text in dark mode */
+[data-theme="dark"] #sidebar {
+  background: var(--primary-color);
+}
+
+[data-theme="dark"] #sidebar nav ul li a {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+[data-theme="dark"] #sidebar nav ul li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+/* Fix header text in dark mode */
+[data-theme="dark"] #header {
+  background: var(--primary-color);
+}
+
+[data-theme="dark"] #header h1,
+[data-theme="dark"] #header .header-title {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Fix intro text in dark mode */
+[data-theme="dark"] .intro-content h1 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .intro-text {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .intro-greeting {
+  color: var(--text-primary);
+  background: var(--surface-color);
+}
+
+/* Fix contact section in dark mode */
+[data-theme="dark"] .contact-section h3 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .contact-section p {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .contact-section a {
+  color: var(--primary-color);
+}
+
+[data-theme="dark"] .contact-section a:hover {
+  color: var(--accent-color);
+}
+
+/* Fix social media icons in dark mode */
+[data-theme="dark"] .contact-section .icons a {
+  background: var(--primary-color);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .contact-section .icons a:hover {
+  background: var(--accent-color);
+  color: var(--text-primary);
+}
+
+/* Fix quote section in dark mode */
+[data-theme="dark"] .quote-section {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .quote-section h2 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .quote-section blockquote {
+  color: var(--text-secondary);
+}
+
+/* Ensure proper contrast for all text elements */
+[data-theme="dark"] * {
+  text-shadow: none; /* Remove any text shadows that might interfere */
+}
+
+[data-theme="dark"] .wrapper h2 {
+  color: var(--text-primary);
+}
+
+/* Fix hyperlink contrast in dark mode to match the first screenshot */
+
+/* Light mode hyperlinks (keep as is) */
+.project-details p a,
+.card p a,
+.intro-text a {
+  color: var(--primary-color);
+  text-decoration: underline;
+  transition: color var(--transition-normal);
+}
+
+.project-details p a:hover,
+.card p a:hover,
+.intro-text a:hover {
+  color: var(--accent-color);
+}
+
+/* Dark mode hyperlinks - match the first screenshot style */
+[data-theme="dark"] .project-details p a,
+[data-theme="dark"] .card p a,
+[data-theme="dark"] .intro-text a,
+[data-theme="dark"] .experience-details a,
+[data-theme="dark"] .mentor-info a {
+  color: var(--primary-color);
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color var(--transition-normal);
+}
+
+[data-theme="dark"] .project-details p a:hover,
+[data-theme="dark"] .card p a:hover,
+[data-theme="dark"] .intro-text a:hover,
+[data-theme="dark"] .experience-details a:hover,
+[data-theme="dark"] .mentor-info a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+/* Ensure consistent link styling across all sections */
+[data-theme="dark"] a[href] {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+[data-theme="dark"] a[href]:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+/* Fix any dotted underlines to solid underlines in dark mode */
+[data-theme="dark"] a {
+  text-decoration-style: solid;
+}
+
+/* Ensure proper contrast for all linked text */
+[data-theme="dark"] .mentor-info,
+[data-theme="dark"] .experience-details,
+[data-theme="dark"] .project-details,
+[data-theme="dark"] .card {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .mentor-info a,
+[data-theme="dark"] .experience-details a {
+  color: var(--primary-color);
+  text-decoration: underline;
+  font-weight: 500;
+}
+
 /* Base Styles */
 * {
   box-sizing: border-box;
