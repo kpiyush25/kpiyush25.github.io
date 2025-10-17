@@ -195,3 +195,56 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('load', () => {
     document.body.classList.add('loaded');
 }); 
+        const sidebarLinks = document.querySelectorAll('#sidebar nav ul li a');
+        
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    }
+
+    setupAwardsScrollSpy() {
+        const sections = document.querySelectorAll('section[id]');
+        const sidebarLinks = document.querySelectorAll('#sidebar nav ul li a');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            sidebarLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    }
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    new ModernWebsite();
+});
+
+// Add loading animation to page elements
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+}); 
