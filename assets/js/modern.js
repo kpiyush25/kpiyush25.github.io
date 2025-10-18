@@ -13,6 +13,7 @@ class ModernWebsite {
         this.setupSearch();
         this.setupAnimations();
         this.setupMobileMenu();
+        this.setupResponsiveNavigation();
         this.loadTheme();
     }
 
@@ -177,11 +178,83 @@ class ModernWebsite {
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
         const sidebar = document.querySelector('#sidebar');
         
+        // Create backdrop element
+        const backdrop = document.createElement('div');
+        backdrop.className = 'mobile-menu-backdrop';
+        document.body.appendChild(backdrop);
+        
         if (mobileMenuToggle && sidebar) {
             mobileMenuToggle.addEventListener('click', () => {
                 sidebar.classList.toggle('active');
                 mobileMenuToggle.classList.toggle('active');
+                backdrop.classList.toggle('active');
             });
+            
+            // Close menu when backdrop is clicked
+            backdrop.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+                backdrop.classList.remove('active');
+            });
+        }
+    }
+
+    // Responsive Navigation
+    setupResponsiveNavigation() {
+        const sidebar = document.getElementById('sidebar');
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            this.handleResponsiveLayout();
+        });
+        
+        // Handle sidebar link clicks on mobile
+        if (sidebar) {
+            const sidebarLinks = sidebar.querySelectorAll('nav ul li a');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    // Close mobile menu when link is clicked
+                    if (window.innerWidth < 1024) {
+                        sidebar.classList.remove('active');
+                        if (mobileMenuToggle) {
+                            mobileMenuToggle.classList.remove('active');
+                        }
+                        // Also close backdrop
+                        const backdrop = document.querySelector('.mobile-menu-backdrop');
+                        if (backdrop) {
+                            backdrop.classList.remove('active');
+                        }
+                    }
+                });
+            });
+        }
+        
+        // Initial layout setup
+        this.handleResponsiveLayout();
+    }
+
+    handleResponsiveLayout() {
+        const sidebar = document.getElementById('sidebar');
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const backdrop = document.querySelector('.mobile-menu-backdrop');
+        
+        if (window.innerWidth >= 1024) {
+            // Desktop layout
+            if (sidebar) {
+                sidebar.classList.remove('active');
+            }
+            if (mobileMenuToggle) {
+                mobileMenuToggle.style.display = 'none';
+            }
+            if (backdrop) {
+                backdrop.classList.remove('active');
+            }
+        } else {
+            // Mobile/tablet layout
+            if (mobileMenuToggle) {
+                mobileMenuToggle.style.display = 'flex';
+            }
         }
     }
 }
