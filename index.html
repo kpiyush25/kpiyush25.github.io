@@ -3,7 +3,7 @@
 	<head>
 		<title>Piyush Kumar - Software Engineer & Robotics Enthusiast</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content="Piyush Kumar - Software Engineer at American Express, IIT Kanpur graduate, Robotics enthusiast, and AI researcher." />
 		<meta name="keywords" content="Piyush Kumar, Software Engineer, Robotics, AI, IIT Kanpur, American Express" />
 		
@@ -34,7 +34,7 @@
 		</header>
 
 		<!-- Mobile Menu Toggle -->
-		<button class="mobile-menu-toggle">
+		<button class="mobile-menu-toggle" title="Toggle navigation menu" aria-label="Toggle navigation menu">
 			<span></span>
 			<span></span>
 			<span></span>
@@ -46,9 +46,10 @@
 				<nav>
 					<ul>
 						<li><a href="#intro">🏠 Home</a></li>
+						<li><a href="#startups">🚀 Startups</a></li>
 						<li><a href="#publications">📚 Publications</a></li>
-						<li><a href="#research_explorations">🔬 Research</a></li>
-						<li><a href="#experiences">💼 Experience</a></li>
+						<li><a href="#research_explorations">🔬 Research Experience</a></li>
+						<li><a href="#experiences">💼 Professional Exp.</a></li>
 						<li><a href="#robotics_projects">🤖 Robotics</a></li>
 						<li><a href="#AI_projects">🧠 AI Projects</a></li>
 						<li><a href="#other_projects">⚙️ Other Projects</a></li>
@@ -71,9 +72,9 @@
 							
 							<p class="intro-greeting">Hey, welcome to my page. Nice to e-meet you! :)</p>
 							
-							<p>I'm a graduate from <a href="https://www.iitk.ac.in/" target="_blank">IIT Kanpur (IITK)</a> with a BTech in Electrical Engineering and minors in Computer Systems and Theory of Computing. Currently working as a Software Engineer at <a href="https://www.americanexpress.com/" target="_blank">American Express</a>.</p>
+							<p>I'm a graduate from <a href="https://www.iitk.ac.in/" target="_blank" rel="noopener">IIT Kanpur (IITK)</a> with a BTech in Electrical Engineering and minors in Computer Systems and Theory of Computing. Currently working as a Software Engineer at <a href="https://www.americanexpress.com/" target="_blank" rel="noopener">American Express</a>.</p>
 							
-							<p>I'm passionate about <strong>Robotics</strong>, <strong>Computer Vision</strong>, <strong>AI</strong>, and <strong>Software Development</strong> in general. During my undergrad, I was an active member of <a href="https://www.ariitk.in/" target="_blank">Aerial Robotics IITK</a>, working on various robotics projects and competitions.</p>
+							<p>I'm passionate about <strong>Robotics</strong>, <strong>Computer Vision</strong>, <strong>AI</strong>, and <strong>Software Development</strong> in general. During my undergrad, I was an active member of <a href="https://www.ariitk.in/" target="_blank" rel="noopener">Aerial Robotics IITK</a>, working on various robotics projects and competitions.</p>
 							<p>To be honest, many things interest me that I haven't explored enough which include, but not limited to, Virtual and Augmented Reality, Cryptocurrency, Blockchain, Cognitive Science, Genetics, Philosophy, Psychology, History and Economics which I explore through reading books in my leisure.</p>
 							
 							<div class="quote-section">
@@ -91,6 +92,22 @@
 						<div class="intro-image">
 							<img src="images/my_photograph_pan_iit_alumni_meet.jpg" alt="Piyush Kumar" />
 						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Startups Section -->
+			<section id="startups" class="wrapper style1">
+				<div class="inner">
+					<h2>🚀 Startups</h2>
+					
+					<div class="card">
+						<h3>iCurious AI</h3>
+						<div class="experience-meta">
+							<span class="tag">Co-Founder & CTO</span>
+							<span class="tag">AI Startup</span>
+						</div>
+						<p>Co-Founder & CTO at <a href="https://www.icurious.ai" target="_blank" rel="noopener">iCurious AI</a>. Building AI buddies for kids.</p>
 					</div>
 				</div>
 			</section>
@@ -116,9 +133,32 @@
 				</div>
 			</section>
 
-			<!-- Research Explorations Section -->
+			<!-- Research Experience Section -->
 			<section id="research_explorations" class="wrapper style1">
 				<div class="inner">
+					<h2>🔬 Research Experience</h2>
+					
+					<div class="card">
+						<h3>Undergraduate Researcher</h3>
+						<div class="experience-meta">
+							<span class="tag">IIT Kanpur</span>
+							<span class="tag">July 2022 - May 2023</span>
+						</div>
+						<p>Advisor: <a href="https://www.iitk.ac.in/new/twinkle-tripathy" target="_blank">Prof. Twinkle Tripathy</a>, Department of Electrical Engineering, <a href="https://www.iitk.ac.in/" target="_blank">IIT Kanpur</a></p>
+						<p>Worked on designing a control law for an agent having unicycle kinematics using a potential function based on a Barrier Lyapunov Function (BLF) to autonomously stabilize it upon a circular trajectory while avoiding a restricted inner circular region.</p>
+					</div>
+
+					<div class="card">
+						<h3>RL Research Intern</h3>
+						<div class="experience-meta">
+							<span class="tag">CIO, Mexico</span>
+							<span class="tag">May 2021 - July 2021</span>
+							<span class="tag">Remote</span>
+						</div>
+						<p>Mentor: <a href="https://www.cio.mx/investigadores/gerardo_flores/en/" target="_blank">Prof. Gerardo Flores</a></p>
+						<p>Learnt Fundamentals of RL. Conducted Literature Reviews. Explored Hybrid Reinforcement Learning Control for a micro quadrotor flight. Implemented RL-based controller for warehouse robot. Explored DDPG algorithms for bipedal walking robots</p>
+					</div>
+
 					<div class="card">
 						<h2>🔬 Research Explorations</h2>
 						<p>My thoughts on research papers that I explore. More for the purpose of tracking my learnings.</p>
@@ -137,19 +177,9 @@
 						<div class="experience-meta">
 							<span class="tag">American Express</span>
 							<span class="tag">Bangalore, India</span>
-							<span class="tag">July 2023 - Present</span>
+							<span class="tag">July 2023 - Sep 2025</span>
 						</div>
 						<p>Working in the Payment Tokenisation team at <a href="https://www.americanexpress.com/">American Express</a>, developing and maintaining the lifecycle of tokens generated from customer card numbers.</p>
-					</div>
-
-					<div class="card">
-						<h3>Undergraduate Researcher</h3>
-						<div class="experience-meta">
-							<span class="tag">IIT Kanpur</span>
-							<span class="tag">July 2022 - May 2023</span>
-						</div>
-						<p>Advisor: <a href="https://www.iitk.ac.in/new/twinkle-tripathy" target="_blank">Prof. Twinkle Tripathy</a>, Department of Electrical Engineering, <a href="https://www.iitk.ac.in/" target="_blank">IIT Kanpur</a></p>
-						<p>Worked on designing a control law for an agent having unicycle kinematics using a potential function based on a Barrier Lyapunov Function (BLF) to autonomously stabilize it upon a circular trajectory while avoiding a restricted inner circular region.</p>
 					</div>
 
 					<div class="card">
@@ -160,17 +190,6 @@
 							<span class="tag">Pre-placement Offer</span>
 						</div>
 						<p>Worked on migration of applications from private to public cloud based on confidentiality and risk.</p>
-					</div>
-
-					<div class="card">
-						<h3>RL Research Intern</h3>
-						<div class="experience-meta">
-							<span class="tag">CIO, Mexico</span>
-							<span class="tag">May 2021 - July 2021</span>
-							<span class="tag">Remote</span>
-						</div>
-						<p>Mentor: <a href="https://www.cio.mx/investigadores/gerardo_flores/en/" target="_blank">Prof. Gerardo Flores</a></p>
-						<p>Learnt Fundamentals of RL. Conducted Literature Reviews. Explored Hybrid Reinforcement Learning Control for a micro quadrotor flight. Implemented RL-based controller for warehouse robot. Explored DDPG algorithms for bipedal walking robots</p>
 					</div>
 				</div>
 			</section>
