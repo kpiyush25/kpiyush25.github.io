@@ -1,66 +1,171 @@
 <!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<html lang="en">
 	<head>
 		<title>Blogs - Piyush Kumar</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Blogs by Piyush Kumar - Software Engineer & Robotics Enthusiast" />
+		
+		<!-- Preload fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		
+		<!-- Stylesheets -->
 		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/modern.css" />
 		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+		
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+		
+		<!-- Blog-specific styles -->
+		<style>
+			/* Blog page specific styles - no sidebar */
+			#wrapper {
+				margin-left: 0 !important;
+			}
+			
+			/* Blog section styling */
+			#blogs {
+				background: var(--background-color);
+			}
+			
+			#blogs .inner {
+				max-width: 800px;
+			}
+			
+			/* Blog links styling - simple list */
+			.blog-list {
+				list-style: none;
+				padding-left: 0;
+				margin: 2rem 0;
+			}
+			
+			.blog-list li {
+				margin-bottom: 0.75rem;
+				padding-left: 1.5rem;
+				position: relative;
+			}
+			
+			.blog-list li::before {
+				content: "•";
+				color: var(--text-primary);
+				font-weight: bold;
+				position: absolute;
+				left: 0;
+			}
+			
+			.blog-list li a {
+				color: #3498db;
+				text-decoration: underline;
+				text-decoration-color: #3498db;
+				text-underline-offset: 3px;
+				font-weight: 500;
+				font-size: 0.95rem;
+				transition: all var(--transition-fast);
+				display: inline-block;
+			}
+			
+			.blog-list li a:hover {
+				color: #2980b9;
+				text-decoration-color: #2980b9;
+			}
+			
+			[data-theme="dark"] .blog-list li a {
+				color: #5dade2;
+				text-decoration-color: #5dade2;
+			}
+			
+			[data-theme="dark"] .blog-list li a:hover {
+				color: #3498db;
+				text-decoration-color: #3498db;
+			}
+			
+			.blog-intro {
+				color: var(--text-secondary);
+				font-size: 0.95rem;
+				line-height: 1.7;
+				margin-bottom: 2rem;
+			}
+			
+			#blogs h1 {
+				margin-bottom: 1rem;
+				font-size: 1.75rem;
+			}
+			
+			.blog-category {
+				font-size: 1.25rem;
+				margin-top: 2rem;
+				margin-bottom: 0.75rem;
+				color: var(--text-primary);
+			}
+			
+			.blog-category:first-of-type {
+				margin-top: 0;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
-		<!-- Header -->
-			<header id="header">
-				<nav>
-					<ul>
-						<li><a href="../index.html"><font size="4">Home</font></a></li>
-					</ul>
-				</nav>
-			</header>
+		<!-- Modern Header -->
+		<header id="header">
+			<div class="header-content">
+				<a href="../index.html" class="logo">🏠 Home</a>
+				<button id="theme-toggle" class="theme-toggle">
+					<span class="icon">🌙</span>
+					<span class="text">Dark Mode</span>
+				</button>
+			</div>
+		</header>
 
 		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Main -->
-					<section id="main" class="wrapper">
-						<div class="inner">
-							<h1 class="major">Blogs</h1>
-							<p>I don't write much but I do sometimes 'cause I find it the best way to express oneself.</p>
-                            
-                            <ul>
-                                <li><a href="https://voxiitk.com/as-we-leave-2023-30/"> As We Leave </a> </li>
-								<li><a href="https://medium.com/@kpiyush25/adventures-of-bob-virat-kohlis-tech-assist-learning-git-the-fun-way-1aa9bf64f090"> Adventures of Bob: Virat Kohli's Tech Assist — Learning Git the Fun Way </a> </li>
-								<li><a href="https://gist.github.com/kpiyush25/9eba550acc3318935cf85f41ebba2ac7"> Setting up clang format </a> </li>
-								<li><a href="https://gist.github.com/kpiyush25/f4ef60a23c5e95df14576b2b82a60dea"> Resolving px4 errors</a></li>
-                            </ul>
-							
-						</div>
-					</section>
-
-			</div>
-
-		<!-- Footer -->
-			<footer id="footer" class="wrapper alt">
+		<div id="wrapper">
+			<!-- Blogs Section -->
+			<section id="blogs" class="wrapper style2 fade-up">
 				<div class="inner">
-					<ul class="menu">
-						<!-- <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
+					<h1>✍️ Blogs</h1>
+					<p class="blog-intro">I don't write much but I do sometimes 'cause I find it the best way to express oneself.</p>
+					
+					<h2 class="blog-category">IITK Campus life</h2>
+					<ul class="blog-list">
+						<li><a href="https://voxiitk.com/as-we-leave-2023-30/" target="_blank" rel="noopener">As We Leave</a></li>
+					</ul>
+					
+					<h2 class="blog-category">Tech blogs</h2>
+					<ul class="blog-list">
+						<li><a href="https://medium.com/@kpiyush25/adventures-of-bob-virat-kohlis-tech-assist-learning-git-the-fun-way-1aa9bf64f090" target="_blank" rel="noopener">Adventures of Bob: Virat Kohli's Tech Assist — Learning Git the Fun Way</a></li>
+						<li><a href="https://gist.github.com/kpiyush25/9eba550acc3318935cf85f41ebba2ac7" target="_blank" rel="noopener">Setting up clang format</a></li>
+						<li><a href="https://gist.github.com/kpiyush25/f4ef60a23c5e95df14576b2b82a60dea" target="_blank" rel="noopener">Resolving px4 errors</a></li>
+					</ul>
+					
+					<h2 class="blog-category">Life</h2>
+					<ul class="blog-list">
+						<li><a href="meaning-in-life.html">Meaning in Life</a></li>
+						<li><a href="life-and-constraints.html">Life and constraints</a></li>
 					</ul>
 				</div>
-			</footer>
+			</section>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer" class="wrapper alt">
+			<div class="inner">
+				<ul class="menu">
+					<li>&copy; 2024 Piyush Kumar. All rights reserved.</li>
+				</ul>
+			</div>
+		</footer>
 
 		<!-- Scripts -->
-			<script src="../assets/js/jquery.min.js"></script>
-			<script src="../assets/js/jquery.scrollex.min.js"></script>
-			<script src="../assets/js/jquery.scrolly.min.js"></script>
-			<script src="../assets/js/browser.min.js"></script>
-			<script src="../assets/js/breakpoints.min.js"></script>
-			<script src="../assets/js/util.js"></script>
-			<script src="../assets/js/main.js"></script>
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/jquery.scrollex.min.js"></script>
+		<script src="../assets/js/jquery.scrolly.min.js"></script>
+		<script src="../assets/js/browser.min.js"></script>
+		<script src="../assets/js/breakpoints.min.js"></script>
+		<script src="../assets/js/util.js"></script>
+		<script src="../assets/js/main.js"></script>
+		<script src="../assets/js/modern.js"></script>
 
 	</body>
 </html>
