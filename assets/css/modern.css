@@ -657,6 +657,7 @@ h3 {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center top;
   border: 4px solid var(--background-color);
   box-shadow: var(--shadow-md);
   transition: all var(--transition-normal);
@@ -960,6 +961,7 @@ h3 {
   .philosophy-image img {
     width: 120px;
     height: 120px;
+    object-position: center top;
   }
 
   .philosophy-text {
@@ -1022,6 +1024,7 @@ h3 {
   .philosophy-image img {
     width: 180px;
     height: 180px;
+    object-position: center top;
   }
 
   .philosophy-text-wrapper {
@@ -1161,6 +1164,7 @@ h3 {
   .philosophy-image img {
     width: 200px;
     height: 200px;
+    object-position: center top;
   }
 
   .philosophy-text {
@@ -1291,6 +1295,7 @@ h3 {
   .philosophy-image img {
     width: 220px;
     height: 220px;
+    object-position: center top;
   }
 
   .philosophy-text {
