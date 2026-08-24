@@ -84,6 +84,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  overflow-wrap: break-word;
 }
 
 /* Mobile-First Header */
@@ -260,7 +261,7 @@ body {
 }
 
 #sidebar .inner {
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -269,12 +270,14 @@ body {
 
 #sidebar .inner::before {
   content: "Navigation";
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
   color: var(--text-primary);
   text-align: center;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -289,9 +292,9 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.4rem;
   width: 100%;
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
 }
 
 #sidebar nav ul li {
@@ -303,14 +306,16 @@ body {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 1rem 1.25rem;
+  padding: 0.65rem 1rem;
   color: var(--text-primary);
   text-decoration: none;
-  border-radius: var(--border-radius-lg);
+  border-radius: var(--border-radius-md);
   transition: all var(--transition-fast);
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 0.92rem;
   line-height: 1.4;
+  text-transform: none;
+  letter-spacing: normal;
   width: 100%;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -332,7 +337,8 @@ body {
 }
 
 /* Mobile-First Wrapper */
-#wrapper {
+#wrapper,
+#sidebar + #wrapper {
   margin-left: 0;
   margin-top: 60px;
   min-height: calc(100vh - 60px);
@@ -353,7 +359,7 @@ body {
 }
 
 .wrapper .inner {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
@@ -432,7 +438,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.7rem;
   background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -440,11 +446,11 @@ h1 {
 }
 
 h2 {
-  font-size: 1.75rem;
+  font-size: 1.45rem;
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 /* Mobile-First Introduction Section */
@@ -535,9 +541,10 @@ h3 {
 
 .intro-card-body p {
   margin: 0 0 1.5rem 0;
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: 0.95rem;
+  line-height: 1.75;
   color: var(--text-secondary);
+  overflow-wrap: break-word;
 }
 
 .intro-card-body p:last-child {
@@ -675,12 +682,13 @@ h3 {
 }
 
 .philosophy-text {
-  font-size: 1.1rem;
-  line-height: 1.8;
+  font-size: 1rem;
+  line-height: 1.75;
   color: var(--text-primary);
   margin: 0;
   text-align: center;
   font-weight: 400;
+  overflow-wrap: break-word;
   letter-spacing: 0.3px;
 }
 
@@ -1387,56 +1395,56 @@ h3 {
   }
 
   .philosophy-card {
-    padding: 3rem;
-    max-width: 1100px;
+    padding: 2rem;
+    max-width: 900px;
   }
 
   .philosophy-content {
-    gap: 2.5rem;
+    gap: 2rem;
   }
 
   .philosophy-image img {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     object-position: center top;
   }
 
   .philosophy-text {
-    font-size: 1.2rem;
-    line-height: 1.9;
+    font-size: 1.05rem;
+    line-height: 1.8;
   }
 
   .intro-main-content {
-    max-width: 1100px;
+    max-width: 900px;
   }
 
   .intro-card {
-    padding: 3rem;
+    padding: 2rem;
   }
 
   .intro-card-body p {
-    font-size: 1.1rem;
-    line-height: 1.9;
-    margin-bottom: 2rem;
+    font-size: 0.98rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
   }
 
   .intro-greeting {
-    font-size: 1.4rem;
-    padding: 1.5rem 2.5rem;
+    font-size: 1.15rem;
+    padding: 1rem 1.75rem;
   }
 
   .quote-section {
-    padding: 3rem;
+    padding: 2rem;
   }
 
   .intro-content {
-    gap: 3rem;
+    gap: 2rem;
   }
 
   #sidebar {
     top: 80px;
     left: 0;
-    width: 22em;
+    width: 15em;
     height: calc(100vh - 80px);
     position: fixed;
     background: var(--primary-color);
@@ -1445,18 +1453,19 @@ h3 {
   }
 
   #sidebar nav ul li a {
-    white-space: nowrap;
-    font-size: 0.95rem;
-    padding: 0.875rem 1rem;
+    font-size: 0.82rem;
+    padding: 0.55rem 0.85rem;
   }
 
   #sidebar.active {
     left: 0;
   }
 
-  #wrapper {
-    margin-left: 22em;
+  #wrapper,
+  #sidebar + #wrapper {
+    margin-left: 15em;
     margin-top: 80px;
+    padding-top: 0;
   }
 
   .mobile-menu-toggle {
@@ -1511,58 +1520,58 @@ h3 {
 /* Responsive Design - Desktop and up */
 @media (min-width: 1280px) {
   .wrapper .inner {
-    padding: 5rem 3rem;
+    padding: 3.5rem 2rem;
   }
 
   #philosophy {
-    padding: 6rem 0;
+    padding: 4rem 0;
   }
 
   .philosophy-card {
-    padding: 3.5rem;
-    max-width: 1200px;
+    padding: 2.5rem;
+    max-width: 1000px;
   }
 
   .philosophy-content {
-    gap: 3rem;
+    gap: 2.5rem;
   }
 
   .philosophy-image img {
-    width: 220px;
-    height: 220px;
+    width: 200px;
+    height: 200px;
     object-position: center top;
   }
 
   .philosophy-text {
-    font-size: 1.25rem;
-    line-height: 2;
+    font-size: 1.05rem;
+    line-height: 1.8;
   }
 
   .intro-content {
-    gap: 4rem;
+    gap: 2.5rem;
   }
 
   .intro-main-content {
-    max-width: 1200px;
+    max-width: 900px;
   }
 
   .intro-card {
-    padding: 4rem;
+    padding: 2.5rem;
   }
 
   .intro-card-body p {
-    font-size: 1.15rem;
-    line-height: 2;
-    margin-bottom: 2.25rem;
+    font-size: 0.98rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
   }
 
   .intro-greeting {
-    font-size: 1.6rem;
-    padding: 2rem 3.5rem;
+    font-size: 1.2rem;
+    padding: 1.25rem 2rem;
   }
 
   .quote-section {
-    padding: 4rem;
+    padding: 2.5rem;
   }
 
   .project-image,
@@ -1794,7 +1803,8 @@ html {
     display: none !important;
   }
   
-  #wrapper {
+  #wrapper,
+  #sidebar + #wrapper {
     margin-left: 0;
     margin-top: 0;
   }
