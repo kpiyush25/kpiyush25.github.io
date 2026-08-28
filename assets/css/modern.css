@@ -485,9 +485,9 @@ h3 {
 }
 
 .intro-greeting {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: var(--accent-color);
-  font-weight: 600;
+  font-weight: 400;
   margin: 0;
   padding: 1rem 1.5rem;
   background: linear-gradient(135deg, rgba(80, 199, 247, 0.15) 0%, rgba(52, 152, 219, 0.1) 100%);
@@ -1297,7 +1297,7 @@ h3 {
   }
 
   .intro-greeting {
-    font-size: 1.3rem;
+    font-size: 1rem;
     padding: 1.25rem 2rem;
   }
 
@@ -1446,7 +1446,7 @@ h3 {
   }
 
   .intro-greeting {
-    font-size: 1.15rem;
+    font-size: 1rem;
     padding: 1rem 1.75rem;
   }
 
@@ -1506,7 +1506,7 @@ h3 {
   }
 
   .intro-greeting {
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding: 1.75rem 3rem;
   }
 
@@ -1596,7 +1596,7 @@ h3 {
   }
 
   .intro-greeting {
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 1.25rem 2rem;
   }
 
