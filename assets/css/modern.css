@@ -201,6 +201,8 @@ body {
   color: var(--text-primary);
   font-size: 0.8rem;
   font-weight: 500;
+  text-transform: none;
+  letter-spacing: normal;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   min-width: 90px;
@@ -401,6 +403,8 @@ body {
   background: var(--primary-color);
   color: var(--background-color);
   text-decoration: none;
+  text-transform: none;
+  letter-spacing: normal;
   border-radius: var(--border-radius-md);
   font-weight: 500;
   transition: all var(--transition-fast);
@@ -455,7 +459,7 @@ h3 {
 
 /* Mobile-First Introduction Section */
 #intro {
-  min-height: 100vh;
+  min-height: 0;
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, var(--surface-color) 0%, var(--background-color) 100%);
@@ -541,7 +545,7 @@ h3 {
 
 .intro-card-body p {
   margin: 0 0 1.5rem 0;
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.75;
   color: var(--text-secondary);
   overflow-wrap: break-word;
@@ -575,8 +579,8 @@ h3 {
 }
 
 .quote-section {
-  margin: 1rem 0;
-  padding: 2rem;
+  margin: 0.75rem 0;
+  padding: 1rem 1.25rem;
   background: linear-gradient(135deg, var(--surface-color) 0%, rgba(80, 199, 247, 0.08) 100%);
   border-radius: var(--border-radius-xl);
   border: 2px solid var(--border-color);
@@ -594,9 +598,9 @@ h3 {
 }
 
 .quote-section h2 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: var(--text-primary);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.25rem;
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
@@ -604,11 +608,11 @@ h3 {
 
 .quote-section blockquote {
   font-style: italic;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin: 0;
   color: var(--text-primary);
   font-weight: 500;
-  line-height: 1.6;
+  line-height: 1.4;
 }
 
 /* Philosophy Section */
@@ -1221,13 +1225,13 @@ h3 {
   }
 
   .intro-card-body p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.7;
     margin-bottom: 1.25rem;
   }
 
   .quote-section {
-    padding: 1.5rem;
+    padding: 1rem 1.25rem;
   }
 }
 
@@ -1273,7 +1277,7 @@ h3 {
   }
 
   .philosophy-text {
-    font-size: 1.15rem;
+    font-size: 1rem;
     line-height: 1.8;
     text-align: left;
   }
@@ -1287,7 +1291,7 @@ h3 {
   }
 
   .intro-card-body p {
-    font-size: 1.05rem;
+    font-size: 1rem;
     line-height: 1.85;
     margin-bottom: 1.75rem;
   }
@@ -1298,7 +1302,7 @@ h3 {
   }
 
   .quote-section {
-    padding: 2.5rem;
+    padding: 1.25rem 1.75rem;
   }
 
   .intro-actions {
@@ -1391,26 +1395,39 @@ h3 {
   }
 
   #philosophy {
-    padding: 5rem 0;
+    padding: 2rem 0 1rem;
+  }
+
+  #philosophy .inner {
+    padding-top: 1rem;
+    padding-bottom: 0.75rem;
+  }
+
+  #intro {
+    padding: 0.5rem 0 2rem;
+  }
+
+  #intro .inner {
+    padding-top: 0.75rem;
   }
 
   .philosophy-card {
-    padding: 2rem;
+    padding: 1.5rem;
     max-width: 900px;
   }
 
   .philosophy-content {
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .philosophy-image img {
-    width: 180px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
     object-position: center top;
   }
 
   .philosophy-text {
-    font-size: 1.05rem;
+    font-size: 1rem;
     line-height: 1.8;
   }
 
@@ -1423,7 +1440,7 @@ h3 {
   }
 
   .intro-card-body p {
-    font-size: 0.98rem;
+    font-size: 1rem;
     line-height: 1.8;
     margin-bottom: 1.5rem;
   }
@@ -1434,7 +1451,7 @@ h3 {
   }
 
   .quote-section {
-    padding: 2rem;
+    padding: 1.25rem 1.75rem;
   }
 
   .intro-content {
@@ -1494,7 +1511,7 @@ h3 {
   }
 
   .quote-section {
-    padding: 3.5rem;
+    padding: 1.5rem 3rem;
   }
 
   .project-image,
@@ -1524,26 +1541,39 @@ h3 {
   }
 
   #philosophy {
-    padding: 4rem 0;
+    padding: 2rem 0 1rem;
+  }
+
+  #philosophy .inner {
+    padding-top: 1rem;
+    padding-bottom: 0.75rem;
+  }
+
+  #intro {
+    padding: 0.5rem 0 2rem;
+  }
+
+  #intro .inner {
+    padding-top: 0.75rem;
   }
 
   .philosophy-card {
-    padding: 2.5rem;
+    padding: 2rem;
     max-width: 1000px;
   }
 
   .philosophy-content {
-    gap: 2.5rem;
+    gap: 2rem;
   }
 
   .philosophy-image img {
-    width: 200px;
-    height: 200px;
+    width: 170px;
+    height: 170px;
     object-position: center top;
   }
 
   .philosophy-text {
-    font-size: 1.05rem;
+    font-size: 1rem;
     line-height: 1.8;
   }
 
@@ -1560,7 +1590,7 @@ h3 {
   }
 
   .intro-card-body p {
-    font-size: 0.98rem;
+    font-size: 1rem;
     line-height: 1.8;
     margin-bottom: 1.5rem;
   }
@@ -1571,7 +1601,7 @@ h3 {
   }
 
   .quote-section {
-    padding: 2.5rem;
+    padding: 1.25rem 2rem;
   }
 
   .project-image,
