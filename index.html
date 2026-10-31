@@ -146,7 +146,25 @@
 							<span class="tag">AI Startup</span>
 							<span class="tag">Oct 2025 - Mar 2026</span>
 						</div>
-						<p>Co-Founder (Tech & Product) at <a href="https://www.icurious.ai" target="_blank" rel="noopener">iCurious AI</a>. Built physical AI companions for kids to solve the problem of high passive screen time.</p>
+						<div class="project-content">
+							<div class="project-image tall">
+								<div class="carousel" data-carousel>
+									<div class="carousel-track">
+										<div class="slide"><img src="images/hardware_voice_AI_companion.jpg" alt="iCurious AI hardware voice companion" /></div>
+										<div class="slide"><img src="images/hardware_voice_AI_companion_electronics.jpg" alt="iCurious AI companion electronics" loading="lazy" /></div>
+									</div>
+									<button type="button" class="carousel-btn prev" aria-label="Previous photo">&#10094;</button>
+									<button type="button" class="carousel-btn next" aria-label="Next photo">&#10095;</button>
+									<div class="carousel-dots"></div>
+								</div>
+							</div>
+							<div class="project-details">
+								<p>Co-Founder (Tech & Product) at <a href="https://www.icurious.ai" target="_blank" rel="noopener">iCurious AI</a>. Built physical AI companions for kids to solve the problem of high passive screen time.</p>
+								<div class="project-actions">
+									<a href="icurious_ai.html" class="button">See more</a>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -478,6 +496,42 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 		<script src="assets/js/modern.js"></script>
+		<script>
+			(function () {
+				var carousel = document.querySelector('[data-carousel]');
+				if (!carousel) return;
+				var track = carousel.querySelector('.carousel-track');
+				var count = track.children.length;
+				var dotsBox = carousel.querySelector('.carousel-dots');
+				var index = 0, timer = null;
+				var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+				var dots = Array.prototype.map.call(track.children, function (_, i) {
+					var d = document.createElement('button');
+					d.type = 'button';
+					d.setAttribute('aria-label', 'Go to photo ' + (i + 1));
+					d.addEventListener('click', function () { go(i); restart(); });
+					dotsBox.appendChild(d);
+					return d;
+				});
+
+				function go(i) {
+					index = (i + count) % count;
+					track.style.transform = 'translateX(' + (-100 * index) + '%)';
+					dots.forEach(function (d, j) { d.classList.toggle('active', j === index); });
+				}
+				function start() { if (!reduce && !timer) timer = setInterval(function () { go(index + 1); }, 3500); }
+				function stop() { clearInterval(timer); timer = null; }
+				function restart() { stop(); start(); }
+
+				carousel.querySelector('.prev').addEventListener('click', function () { go(index - 1); restart(); });
+				carousel.querySelector('.next').addEventListener('click', function () { go(index + 1); restart(); });
+				carousel.addEventListener('mouseenter', stop);
+				carousel.addEventListener('mouseleave', start);
+				go(0);
+				start();
+			})();
+		</script>
 
 	</body>
 </html>
